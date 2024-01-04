@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base2::layout(~{::section})">
+	
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- Bootstrap JS and jQuery -->
+    
+</head>
+<body>
+	<section>
+		
+    <div class="container">
+        <form method="post"  action="saveProfile" enctype="multipart/form-data">
+            <div class="text-center"><h2>Matrimonial Profile Form</h2></div>
+        
+        
+          
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <label for="titleFather">Title:</label>
+                <select class="form-control" id="title" name="title">
+                    <option selected>Choose...</option>
+                    <option value="Mr.">Mr.</option>
+                    <option value="Dr.">Dr.</option>
+                    <option value="Dr.">Dr.Mr.</option>
+                    <!-- Add other options as needed -->
+                </select>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="fatherFirstname">First Name:</label>
+                <input type="text" class="form-control" id="fatherFirstname" placeholder="Enter first name" name="candidateFirstname" required>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="fatherMiddlename">Middle Name:</label>
+                <input type="text" class="form-control" id="fatherMiddlename" placeholder="Enter middle name" name="candidateMiddlename">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="fatherLastname">Last Name:</label>
+                <input type="text" class="form-control" id="fatherLastname" placeholder="Enter last name" name="candidateSurname" required>
+            </div>
+        </div>
+           
+        
+   
+    
+   <div class="form-row">
+    <div class="form-group col-md-3">
+        <label for="day">Day:</label>
+        <select id="day" name="birthday" class="form-control">
+            <option selected>Choose...</option>
+            <!-- Add options for days 1-7 -->
+            <option value="Sunday">Sunday</option>
+            <option value="Monday">Monday</option>
+            <option value="Thusday">Thusday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thirsday">Thirsday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+        </select>
+    </div>
+    <div class="form-group col-md-3">
+        <label for="date">Date:</label>
+        <select id="date" name="date" class="form-control">
+            <option selected>Choose...</option>
+            <!-- Add options for dates 1-31 -->
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+    </div>
+    <div class="form-group col-md-3">
+        <label for="month">Month:</label>
+        <select id="month" name="month" class="form-control">
+            <option selected>Choose...</option>
+            <!-- Add options for months 1-12 -->
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+    </div>
+    <div class="form-group col-md-3">
+        <label for="year">Year:</label>
+        <select id="year" name="year" class="form-control">
+            <option selected>Choose...</option>
+            <!-- Add options for years 1980-2023 -->
+            <option value="1980">1980</option>
+            <option value="1981">1981</option>
+            <option value="1982">1982</option>
+            <option value="1983">1983</option>
+            <option value="1984">1984</option>
+            <option value="1985">1985</option>
+            <option value="1986">1986</option>
+            <option value="2005">2005</option>
+        </select>
+    </div>
+</div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Gender:</label><br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                <label class="form-check-label" for="male">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                <label class="form-check-label" for="female">Female</label>
+            </div>
+        </div>
+        
+        <div class="form-group col-md-6">
+            <label for="birthPlace">Birth Place:</label>
+            <input type="text" class="form-control" id="birthPlace" placeholder="Enter birth place" name="birthPlace">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <label for="heightFeet">Height (Feet):</label>
+            <select class="form-control" id="heightFeet" name="heightFeet">
+                <option selected>5</option>
+                <!-- Add options as needed -->
+            </select>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="heightInch">(Inches):</label>
+            <select class="form-control" id="heightInch" name="heightInch">
+                <option selected>3</option>
+                <!-- Add options as needed -->
+            </select>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="heightInch">Complexion:</label>
+            <select class="form-control" id="heightInch" name="complexion">
+                <option selected>Fair</option>
+                <option selected>Black</option>
+                <!-- Add options as needed -->
+            </select>
+        </div>
+        <div class="form-group col-md-3 ">
+            <label for="bloodGroup">Blood Group:</label>
+            <select class="form-control" id="bloodGroup" name="bloodGroup">
+                <option selected>Choose...</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label>Maritial status:</label><br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="maritialStatus" id="male" value="Unmarried">
+                <label class="form-check-label" for="male">Unmarried</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="maritialStatus" id="female" value="Widow/widowder">
+                <label class="form-check-label" for="female">Widow/widowder</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="maritialStatus" id="female" value="Divorcee">
+                <label class="form-check-label" for="female">Divorcee</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="gotra">Gotra:</label>
+            <select class="form-control" id="gotra" name="gotra">
+                <option selected>Khalap</option>
+                <option selected>Mandav</option>
+                <!-- Add options as needed -->
+            </select>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="goddess">Goddess:</label>
+            <select class="form-control" id="goddess" name="goddess">
+                <option selected>Dhanai Punai mata</option>
+                <option selected>Sulai mata</option>
+                <!-- Add options as needed -->
+            </select>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="education">Education:</label>
+        <select class="form-control" id="education" name="education">
+            <option selected>Choose...</option>
+            <option value="High School">High School</option>
+            <option value="Bachelor's Degree">Bachelor's Degree</option>
+            <option value="Master's Degree">Master's Degree</option>
+            <option value="PhD">PhD</option>
+            <!-- Add other options as needed -->
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="education">Occupation:</label>
+        <select class="form-control" id="education" name="occupation">
+            <option selected>Choose...</option>
+            <option value="High School">High School</option>
+            <option value="Bachelor's Degree">Bachelor's Degree</option>
+            <option value="Master's Degree">Master's Degree</option>
+            <option value="PhD">PhD</option>
+            <!-- Add other options as needed -->
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="occupationAddress">Occupation Address:</label>
+        <textarea class="form-control" id="occupationAddress" rows="3" placeholder="Enter occupation address" name="occupationAddress"></textarea>
+    </div>
+    <div class="form-row">
+       
+        <div class="form-group col-md-6">
+            <label for="altCandidateMobilenumber">Alternate Mobile Number:</label>
+            <input type="tel" class="form-control" id="altCandidateMobilenumber" placeholder="Enter alternate mobile number" name="altCandidateMobilenumber">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-2">
+            <label for="titleFather"></label>
+            <select class="form-control" id="titleFather" name="titleFather">
+                <option selected>Choose...</option>
+                <option value="Mr.">Mr.</option>
+                <option value="Dr.">Dr.</option>
+                <!-- Add other options as needed -->
+            </select>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="fatherFirstname">Father First Name:</label>
+            <input type="text" class="form-control" id="fatherFirstname" placeholder="Enter first name" name="fatherFirstname">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="fatherMiddlename">Middle Name:</label>
+            <input type="text" class="form-control" id="fatherMiddlename" placeholder="Enter middle name" name="fatherMiddlename">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="fatherLastname">Last Name:</label>
+            <input type="text" class="form-control" id="fatherLastname" placeholder="Enter last name" name="fatherLastname">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="fatherOccupation">Father's Occupation:</label>
+            <input type="text" class="form-control" id="fatherOccupation" placeholder="Enter father's occupation" name="fatherOccupation">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="fatherMobileNumber">Father's Mobile Number:</label>
+            <input type="tel" class="form-control" id="fatherMobileNumber" placeholder="Enter father's mobile number" name="fatherMobileNumber">
+        </div>
+    </div>
+    
+    <div class="form-row">
+        <div class="form-group col-md-2">
+            <label for="titleFather"></label>
+            <select class="form-control" id="titleFather" name="titleMother">
+                <option selected>Choose...</option>
+                <option value="Mr.">Mr.</option>
+                <option value="Dr.">Dr.</option>
+                <!-- Add other options as needed -->
+            </select>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="fatherFirstname">Mother First Name:</label>
+            <input type="text" class="form-control" id="fatherFirstname" placeholder="Enter first name" name="motherFirstname">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="fatherMiddlename">Middle Name:</label>
+            <input type="text" class="form-control" id="fatherMiddlename" placeholder="Enter middle name" name="motherMiddlename">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="fatherLastname">Last Name:</label>
+            <input type="text" class="form-control" id="fatherLastname" placeholder="Enter last name" name="motherLastname">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="fatherOccupation">Mother's Occupation:</label>
+            <input type="text" class="form-control" id="fatherOccupation" placeholder="Enter mother's occupation" name="motherOccupation">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="fatherMobileNumber">Mother's Mobile Number:</label>
+            <input type="tel" class="form-control" id="fatherMobileNumber" placeholder="Enter mother's mobile number" name="motherMobileNumber">
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="occupationAddress">Visit Address:</label>
+        <textarea class="form-control" id="occupationAddress" rows="3" placeholder="Enter occupation address" name="visitAddress"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="occupationAddress">Temporory Address:</label>
+        <textarea class="form-control" id="occupationAddress" rows="3" placeholder="Enter occupation address" name="tempororyAddress"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="occupationAddress">Bio:</label>
+        <textarea class="form-control" id="occupationAddress" rows="3" placeholder="Enter occupation address" name="bio"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="occupationAddress">Expections:</label>
+        <textarea class="form-control" id="occupationAddress" rows="3" placeholder="Enter occupation address" name="expections"></textarea>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label for="candidateMobilenumber">Profile photo:</label>
+            <input type="file" class="form-control" id="candidateMobilenumber" placeholder="Enter mobile number" name="pimage">
+        </div> 
+    </div>
+   
+   
+     <div class="text-center">
+    <button type="submit" class="btn btn-primary">Submit</button></div>
+    </div>
+</form>
+   
+	</section>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base2::layout(~{::section})">
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+
+
+	<section>
+		
+		
+		
+		<div class="container mt-4 ">
+    
+    <div class="card shadow " th:if="${userinfo}">
+      <div class="text-center mt-3">
+        <img src="" th:src="@{'/img/'+ ${userinfo.image}}" alt="John" class="rounded-circle" style="width: 300px; height: 300px;">
+      </div>
+      <div class="mt-4 text-center">
+        <h3 class="">Contact Information</h3>
+         <p class="text-center">Name: [[${userinfo.candidateFirstname}]] [[${userinfo.candidateMiddlename}]] [[${userinfo.candidateSurname}]]</p>
+        <p class="">Email: [[${user.email}]]</p>
+        <p class="">Mobile: +1234567890</p>
+        <p class="text-center">Address: 123 Main Street, City, Country</p>
+        <!-- Additional Contact Fields -->
+        <p class="text-center">Alternate Mobile: [[${userinfo.altCandidateMobilenumber}]]</p>
+        <p class="">Occupation Address: [[${userinfo.occupationAddress}]]</p>
+        <hr> <!-- Optional horizontal line for separation -->
+        <h3 class="text-center mt-4">Additional Information</h3>
+        <p class="text-center">Bio: [[${userinfo.bio}]]</p>
+        <p class="text-center">Date of Birth: [[${userinfo.date}]]/ [[${userinfo.month}]] /[[${userinfo.year}]]</p>
+        <p class="text-center">Education: [[${userinfo.education}]]</p>
+        <p class="text-center">Occupation: [[${userinfo.occupation}]]</p>
+        <!-- Additional Personal Fields -->
+        <p class="text-center">Gotra: [[${userinfo.gotra}]]</p>
+        <p class="text-center">Goddess: [[${userinfo.goddess}]]</p>
+        <p class="text-center">Height: [[${userinfo.heightFeet}]]'[[${userinfo.heightInch}]]"</p>
+        <p class="text-center">Blood Group: [[${userinfo.bloodGroup}]]</p>
+        <p class="text-center">Marital Status: [[${userinfo.maritialStatus}]]</p>
+        <p class="text-center">Complexion: [[${userinfo.complexion}]]</p>
+        <!-- Add other fields similarly -->
+      </div>
+    </div>
+    <h1 th:unless="${userinfo}" class="bg-success">Oops!! Profile is not created yet</h1>
+    <div class="text-center mt-2">
+    <form method="post" th:action="@{'/user/update/'+${userinfo.infoId}}">
+		  <button type="submit" class="btn-sm btn-success mb-2">Update</button>
+		  </form></div>
+  </div>
+  
+  
+  <a href="/logout">Logout</a>
+  
+	</section>
+
+</body>
+</html>

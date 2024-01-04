@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base2::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+</head>
+<body>
+
+
+	<section class="bacphoto text-center">
+		
+<!--<section class="search-sec">
+    <div class="container">
+        <form action="/user/search" method="post" novalidate="novalidate">
+            <div class="row">
+                <div class="col-lg-8 text-center offset-md-2">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-12 p-2">
+                            <select class="form-control search-slt" id="gotra" name="gotra">
+                                <option>Select Gotra</option>
+                                <option>Mandav</option>
+                                <option>Khalap</option>
+                                
+                            </select> 
+                        </div>
+                         <div class="col-lg-3 col-md-3 col-sm-12 p-2">
+                            <select class="form-control search-slt" id="year" name="year">
+                                <option>Select Birth year</option>
+                                <option>1989</option>
+                                <option>2000</option>
+                                
+                            </select>
+                        </div>
+                          <div class="col-lg-3 col-md-3 col-sm-12 p-2">
+                            <select class="form-control search-slt" id="occupation" name="occupation">
+                                <option>Select Occupation</option>
+                                <option>Doctor</option>
+                                <option>Engineer</option>
+                                
+                            </select>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12 p-2">
+                            <button type="button" class="btn btn-primary wrn-btn">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>-->
+		
+					
+	<div class="row" >
+    <div class="col-md-4 mb-3" th:each="alluserinfo : ${allUserInfo}">
+		 <div th:if="${alluserinfo.user.userId == user.userId}"></div>
+        <div class="card">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="" th:src="@{'/img/'+ ${alluserinfo.image}}"  class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${alluserinfo.candidateFirstname}"></h5>
+                        <p class="card-text" th:text="'DOB: ' + ${alluserinfo.date} + ' / ' + ${alluserinfo.month} + ' / ' + ${alluserinfo.year}"></p>
+                        <p class="card-text" th:text="'Occupation: ' + ${alluserinfo.occupation}"></p>
+                        <p class="card-text" th:text="'Address: ' + ${alluserinfo.occupationAddress}"></p>
+                        <p class="card-text" th:text="'Gotra: ' + ${alluserinfo.gotra}"></p>
+                        <a th:href="@{'/user/'+${alluserinfo.infoId}+'/biodata'}"><button type="button" class="btn-sm btn-primary mb-2">View</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+       
+            
+        </div>
+    </div>
+</div>
+
+	</section>
+<script>
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="base2::layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<title>Insert title here</title>
+</head>
+<body>
+	<section>
+ <div class=" container mt-4 bomar" th:if="${relatives}">
+    <h3>My Relatives</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Relation Name</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Mobile Number</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="relative : ${relatives}">
+                <td th:text="${relative.relationName}">Relation Name</td>
+                <td> <span th:text="${relative.rtitle}"></span> <span th:text="${relative.rfirstName}"></span><span th:text="${relative.rMiddleName}"></span><span th:text="${relative.rlastName}"></span></td>
+                <td th:text="${relative.rAddress}"></td>
+                <td th:text="${relative.rMobileNumber}"></td>
+              <td><a th:href="@{'/user/delete/'+${relative.relativeId}}">  <button type="button" class="btn-sm btn-danger">Delete</button></a></td>
+            </tr>
+            </tbody>
+    </table>
+</div>
+      </section>
+</body>
+</html>

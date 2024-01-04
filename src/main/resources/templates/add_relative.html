@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org"
+	th:replace="base2::layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+	<section>
+<div class="container">
+    <form method="post" action="process_relative">
+        <div class="text-center"><h2>Add your natives</h2></div>
+        <div class="form-group">
+            <label for="relationName">Relation Name:</label>
+            <select class="form-control" id="relationName" name="relationName">
+                <option selected>Uncle</option>
+                <option>Brother</option>
+                <option>Mavsa</option>
+                <!-- Add options as needed -->
+            </select>
+        </div>
+        
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <label for="titleFather"></label>
+                <select class="form-control" id="titleFather" name="rtitle">
+                    
+                    <option value="Mr.">Mr.</option>
+                    <option value="Dr.">Dr.</option>
+                    <!-- Add other options as needed -->
+                </select>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="fatherFirstname">First Name:</label>
+                <input type="text" class="form-control" id="fatherFirstname" placeholder="Enter first name" name="rfirstName" required>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="fatherMiddlename">Middle Name:</label>
+                <input type="text" class="form-control" id="fatherMiddlename" placeholder="Enter middle name" name="rMiddleName" >
+            </div>
+            <div class="form-group col-md-4">
+                <label for="fatherLastname">Last Name:</label>
+                <input type="text" class="form-control" id="fatherLastname" placeholder="Enter last name" name="rlastName" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="rAddress">Address:</label>
+            <input type="text" class="form-control" id="rAddress" placeholder="Enter address" name="rAddress">
+        </div>
+        <div class="form-group">
+            <label for="rMobileNumber">Mobile Number:</label>
+            <input type="tel" class="form-control" id="rMobileNumber" placeholder="Enter mobile number" name="rMobileNumber">
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Submit</button></div>
+            </div>
+    </form>
+    <a href="/logout">Logout</a>
+</div>
+</section>
+</body>
+</html>

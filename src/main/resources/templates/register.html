@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body >
+	<section class="bacimage">
+		<div class="container p-3 bomar">
+			<div class="row">
+				<div class="col-md-6 offset-md-3">
+					<div class="card">
+						<div class="card-header text-center fs-4">Register Page</div>
+
+
+						<th:block th:if="${session.msg}">
+							<p class="text-center text-success fs-4">[[${session.msg}]]</p>
+							<th:block th:text="${@userServiceImpl.removeSessionMessage()}"></th:block>
+
+						</th:block>
+
+						<div class="card-body">
+							<form novalidate action="saveUser" method="post" th:object="${user}">
+								<div class="mb-3">
+									<label>Enter Full Name</label> <input type="text"    class="form-control " th:classappend="${#fields.hasErrors('name')? 'is-invalid' : ''}"  name="name" required >
+										 <div class="invalid-feedback" th:each="e: ${#fields.errors('name')}" th:text="${e}" >
+					      
+					                   </div>
+					                   	
+								</div>
+								
+								<div class="mb-3">
+									<label>Enter Email</label> <input type="text" th:value="${user.email}" th:classappend="${#fields.hasErrors('email')? 'is-invalid' : ''}" name="email"
+										class="form-control">
+										<div class="invalid-feedback" th:each="e: ${#fields.errors('email')}" th:text="${e}" >
+					      
+					                   </div>
+								</div>
+
+
+								<div class="mb-3">
+									<label>Enter Password</label> <input type="text"
+									 th:value="${user.password}"	name="password" class="form-control">
+								</div>
+								<button class="btn btn-primary col-md-12">Register</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+
+
+
+	</section>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  
+</body>
+</html>
